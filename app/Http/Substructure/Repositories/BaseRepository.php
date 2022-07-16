@@ -19,9 +19,10 @@ class BaseRepository
         return  $this->resource::collection($collection);
     }
 
-    public function store()
+    public function store($values = null)
     {
-        return new $this->resource(($this->model::create(request()->all())));
+        $values = $values ?? request()->all();
+        return new $this->resource(($this->model::create($values)));
     }
 
     public function find($id)

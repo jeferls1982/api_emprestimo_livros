@@ -31,7 +31,7 @@ class BaseController extends Controller implements IRepository
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         return $this->repository->store();
     }
